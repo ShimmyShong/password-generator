@@ -31,39 +31,70 @@ var generatePassword = function(){
     return passwordText = "(You must choose less than 128 characters)";
   }
 
-
-  // let secondQuestion = prompt("Would you like uppercase characters in your password? \n y/n");
-  // let thirdQuestion = prompt("Would you like numbers in your password? \n y/n");
-  // let fourthQuestion = prompt("Would you like special characters in your password? \n y/n");
-
   let firstQuestion = prompt("Would you like lowercase characters in your password? \n y/n");
 
-  for(i = 0; i != 0; i + 0){
-
-    if(firstQuestion == "y"){
+  // checks to make sure the answers to the questions are valid
+  for(i = 0; i < 1; i + 0){
+    if(firstQuestion === "y"){
       passArray = passArray.concat(lowerCase);
-      console.log(firstQuestion);
       i++;
     }
-    else if(firstQuestion == "n"){
+    else if(firstQuestion === "n"){
       console.log(firstQuestion);
       i++;
-      return;
     }
     else{
       window.alert("Please enter a proper answer.")
-      console.log(firstQuestion);
+      firstQuestion = prompt("Would you like lowercase characters in your password? \n y/n");
     }
   }
 
-  if(secondQuestion == "y"){
-    passArray = passArray.concat(upperCase);
+  let secondQuestion = prompt("Would you like uppercase characters in your password? \n y/n");
+
+  for(i = 0; i < 1; i + 0){
+    if(secondQuestion === "y"){
+      passArray = passArray.concat(upperCase);
+      i++;
+    }
+    else if(secondQuestion === "n"){
+      i++;
+    }
+    else{
+      window.alert("Please enter a proper answer.")
+      secondQuestion = prompt("Would you like uppercase characters in your password? \n y/n");
+    }
   }
-  if(thirdQuestion == "y"){
-    passArray = passArray.concat(numbers);
+
+  let thirdQuestion = prompt("Would you like numbers in your password? \n y/n");
+
+  for(i = 0; i < 1; i + 0){
+    if(thirdQuestion === "y"){
+      passArray = passArray.concat(numbers);
+      i++;
+    }
+    else if(thirdQuestion === "n"){
+      i++;
+    }
+    else{
+      window.alert("Please enter a proper answer.")
+      thirdQuestion = prompt("Would you like numbers in your password? \n y/n");
+    }
   }
-  if(fourthQuestion == "y"){
-    passArray = passArray.concat(specialChars);
+
+  let fourthQuestion = prompt("Would you like special characters in your password? \n y/n");
+
+  for(i = 0; i < 1; i + 0){
+    if(fourthQuestion === "y"){
+      passArray = passArray.concat(specialChars);
+      i++;
+    }
+    else if(fourthQuestion === "n"){
+      i++;
+    }
+    else{
+      window.alert("Please enter a proper answer.")
+      fourthQuestion = prompt("Would you like special characters in your password? \n y/n");
+    }
   }
 
   for (let i = 0; i < passLength; i++){
@@ -72,7 +103,6 @@ var generatePassword = function(){
 
   // the .join prints the array on one line without any brackets or commas in between
   return passwordText.join("");
-
 }
 
 
