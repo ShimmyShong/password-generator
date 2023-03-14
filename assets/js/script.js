@@ -46,7 +46,7 @@ var generatePassword = function(){
     else{
       window.alert("Please enter a proper answer.")
       firstQuestion = prompt("Would you like lowercase characters in your password? \n y/n");
-    }
+    } 
   }
 
   let secondQuestion = prompt("Would you like uppercase characters in your password? \n y/n");
